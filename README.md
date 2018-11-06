@@ -2,7 +2,7 @@
 
 > Middleware to serve static-files with the pusudb-framework.
 
-This middleware add a static-file-server to the pusudb-framwork to sending static files to the client.
+This middleware adds a file-handler to the pusudb-framework to sending static files to the client.
 
 Framework: [https://www.npmjs.com/package/pusudb](https://www.npmjs.com/package/pusudb)
 
