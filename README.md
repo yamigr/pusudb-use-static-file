@@ -15,12 +15,15 @@ npm install pusudb-use-static-file --save
 
 ## Use
 
+Create a static-instance and define the path where the static-files are located. Define some url's which should be escaped to put the request to the pusudb. When the static-files are located in different folders, put option multipath to true. Please notice, that the filename should be unique, even when the folder is different.
+
 ```js
 var Pusudb = require('pusudb')
 var pusudb = new Pusudb(3000, 'localhost')
 
 var Static = require('pusudb-use-static-file')
-var static = new Static(__dirname + '/public', ['/db']) 
+var static = new Static(__dirname + '/pages', ['/db'], { multipath : true }) 
+var staticSecondPath = new Static(__dirname + '/public', ['/db'], { multipath : false })
 
 // new Static(< path to the static files >, < array of url's to escape when a get-request fired >)
 // http://localhost:3000/index.html the main-path is not necessary in the url
