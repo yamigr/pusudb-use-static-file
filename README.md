@@ -29,6 +29,7 @@ var staticSecondPath = new Static(__dirname + '/public', ['/db'], { multipath : 
 // http://localhost:3000/index.html the main-path is not necessary in the url
 //add the middleware to the pusudb
 pusudb.use('http', static.serve)
+pusudb.use('http', staticSecondPath.serve)
 
 pusudb.listen(function(port, host){
     console.log('pusudb listening:', port, host)
