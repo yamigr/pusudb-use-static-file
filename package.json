@@ -29,7 +29,7 @@
   "author": "yannick grund, https://github.com/yamigr",
   "license": "MIT",
   "dependencies": {
-    "findfile-in-folder-by-pathname": "0.0.5"
+    "findfile-in-folder-by-pathname": "0.0.6"
   },
   "devDependencies": {
     "mocha": "^5.2.0"
