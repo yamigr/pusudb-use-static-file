@@ -22,14 +22,12 @@ var Pusudb = require('pusudb')
 var pusudb = new Pusudb(3000, 'localhost')
 
 var Static = require('pusudb-use-static-file')
-var static = new Static(__dirname + '/pages', ['/db'], { multipath : true }) 
-var staticSecondPath = new Static(__dirname + '/public', ['/db'], { multipath : false })
 
 // new Static(< path to the static files >, < array of url's to escape when a get-request fired >)
-// http://localhost:3000/index.html the main-path is not necessary in the url
+var static = new Static(__dirname + '/node_modules/css', ['/db'], { multipath : true, prefix : '/css' }) 
+
 //add the middleware to the pusudb
 pusudb.use('http', static.serve)
-pusudb.use('http', staticSecondPath.serve)
 
 pusudb.listen(function(port, host){
     console.log('pusudb listening:', port, host)
