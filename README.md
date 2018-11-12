@@ -22,9 +22,7 @@ var Pusudb = require('pusudb')
 var pusudb = new Pusudb(3000, 'localhost')
 
 var Static = require('pusudb-use-static-file')
-
-// new Static(< path to the static files >, < array of url's to escape when a get-request fired >)
-var static = new Static(__dirname + '/node_modules/css', ['/db'], { multipath : true, prefix : '/css' }) 
+var static = new Static(__dirname + '/node_modules/css', ['/db', /* blocked pathnames */], { prefix : '/css' }) 
 
 //add the middleware to the pusudb
 pusudb.use('http', static.serve)
