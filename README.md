@@ -2,9 +2,9 @@
 
 > Middleware to serve static-files with the pusudb-framework.
 
-This middleware adds a file-handler to the pusudb-framework to sending static files to the client.
+This middleware adds a file-handler to the pusudb-framework to serve static files.
 
-Framework: [https://www.npmjs.com/package/pusudb](https://www.npmjs.com/package/pusudb)
+Framework: [ pusudb ](https://www.npmjs.com/package/pusudb)
 
 <a name="installing"></a>
 ## Installing
@@ -14,16 +14,15 @@ npm install pusudb-use-static-file --save
 ```
 
 ## Use
-
 Define the path where the static-files are located. Define some url's which should be escaped. To define a url-prefix use the option prefix.
 
 ```js
 var Pusudb = require('pusudb')
-var pusudb = new Pusudb(3000, 'localhost')
+var pusudb = new Pusudb(3000, 'localhost', { log : true })
 
 var Static = require('pusudb-use-static-file')
 
-// url with prefix '/css' : http://localhost:3000/css/main.css
+// prefix '/css' : http://localhost:3000/css/main.css
 var static = new Static(__dirname + '/node_modules/css', ['/db', /* blocked pathnames */], { prefix : '/css' }) 
 
 //add the middleware to the pusudb
