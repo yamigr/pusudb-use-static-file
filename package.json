@@ -1,6 +1,6 @@
 {
   "name": "pusudb-use-static-file",
-  "version": "0.0.22",
+  "version": "1.0.0",
   "description": "A static-file middleware for the pusudb-framework.",
   "main": "lib/main.js",
   "scripts": {
